@@ -7,7 +7,7 @@ import com.zxh.base.DoResponse;
 /**
  * 服务提供者实现类
  */
-@Service(timeout = 50000)
+@Service(timeout = 50000)  //dubbo的Service注解，暴露服务
 public class OrderServiceImpl implements IOrderService {
     @Override
     public DoResponse doOrder(DoRequest requestParam) {

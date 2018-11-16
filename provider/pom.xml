@@ -2,15 +2,17 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--父节点坐标-->
     <parent>
         <artifactId>springboot-dubbo</artifactId>
         <groupId>com.zxh</groupId>
+        <!--学习用途，快照版本即可-->
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>provider</artifactId>
 
+    <artifactId>provider</artifactId>
     <name>provider</name>
 
     <dependencies>
@@ -23,14 +25,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--dubbo 整合到spring-boot-->
         <dependency>
             <groupId>com.alibaba.spring.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
+        <!--zkclient 客户端-->
         <dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>
+        <!--管理服务提供者暴露的服务接口-->
         <dependency>
             <groupId>com.zxh</groupId>
             <artifactId>api</artifactId>

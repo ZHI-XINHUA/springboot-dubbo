@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zxh.base.DoRequest;
 import com.zxh.base.DoResponse;
 import com.zxh.order.IOrderService;
-import org.json.JSONObject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class RemoteOrderController {
 
-    @Reference
+    @Reference  //dubbo的注解，引用配置，用于创建一个远程服务代理，一个引用可以指向多个注册中心
     private IOrderService orderService;
 
     @GetMapping("index")
