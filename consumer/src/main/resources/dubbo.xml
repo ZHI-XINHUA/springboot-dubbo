@@ -13,7 +13,10 @@
     <dubbo:registry  id="zk" protocol="zookeeper" address="192.168.3.31:2182"/>
 
     <!-- 生成远程服务代理，orderService -->
-    <dubbo:reference id="orderService"  interface="com.annotation.order.IOrderService"  registry="zk" version="1.0.0"/>
+    <dubbo:reference id="orderService"  interface="com.annotation.order.IOrderService"  registry="zk" version="1.0.0"
+                     stub="com.xml.service.DefaultOrderServiceStub">
+        <dubbo:method name="doOrder" timeout="3000"/>
+    </dubbo:reference>
 
     <!--配置监控中心-->
     <dubbo:monitor protocol="registry"/>

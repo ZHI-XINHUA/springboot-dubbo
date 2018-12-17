@@ -1,0 +1,34 @@
+# Spring boot application
+spring.application.name=springboot-dubbo-provider
+server.port=8086
+
+# Base packages to scan Dubbo Components (e.g @Service , @Reference)
+dubbo.scan.basePackages =com.springboot.service
+#注意：dubbo扫描提示的是下面的写法，但是这种写法是不起效果的
+#dubbo.scan.base-packages=com.springboot
+
+# 版本orderService version
+dubbo.orderService.version=2.0.0
+
+# Dubbo Config properties
+## ApplicationConfig bean
+dubbo.application.id=dubbo-provider
+dubbo.application.name=dubbo-provider
+dubbo.application.owner=zxh
+dubbo.application.logger=log4j
+
+## 注册中心 RegistryConfig bean
+dubbo.registry.id=zkRegistry
+dubbo.registry.protocol=zookeeper
+dubbo.registry.address=192.168.3.31:2182
+
+#dubbo.registries.
+
+## 协议 RegistryConfig Bean
+dubbo.protocol.id=dubbo
+dubbo.protocol.name=dubbo
+dubbo.protocol.port=20880
+
+# 监控中心
+dubbo.monitor.id=simple
+dubbo.monitor.protocol=register

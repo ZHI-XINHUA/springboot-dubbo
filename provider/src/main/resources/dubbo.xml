@@ -17,7 +17,8 @@
 
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.annotation.order.IOrderService" ref="orderServices" version="1.0.0" registry="zk" protocol="dubbo"/>
+    <dubbo:service interface="com.annotation.order.IOrderService" ref="orderServices" version="1.0.0" registry="zk" protocol="dubbo"
+     />
 
     <!-- 和本地bean一样实现服务 -->
     <bean id="orderServices" class="com.xml.service.DefaultOrderService"/>

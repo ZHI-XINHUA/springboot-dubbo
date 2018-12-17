@@ -14,8 +14,8 @@ import java.util.concurrent.TimeUnit;
         registry = "zkRegistry",  //注册中心
         protocol = "dubboProtocol", //协议
         monitor = "monitor",  //监控中心
-        version = "1.0.0")  //dubbo的Service注解，暴露服务
-public class OrderServiceImpl implements IOrderService {
+        version = "2.0.0")  //dubbo的Service注解，暴露服务
+public class OrderServiceImplV2 implements IOrderService {
     @Override
     public DoResponse doOrder(DoRequest requestParam) {
         try {

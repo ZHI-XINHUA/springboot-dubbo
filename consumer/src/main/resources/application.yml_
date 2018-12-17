@@ -17,12 +17,18 @@
     registry:
       id: zkRegistry
       address: zookeeper://192.168.3.31:2182
+      check: false  #关闭注册中心启动时检查 (注册订阅失败时报错)：
     scan:
       basePackages: com.springboot
 
     #service version
     orderService:
       version: 2.0.0
+
+    # 关闭所有服务的启动时检查 (没有提供者时报错)：
+   # consumer:
+    #  check: false
+
 
 
 

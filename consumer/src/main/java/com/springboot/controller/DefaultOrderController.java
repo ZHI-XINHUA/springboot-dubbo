@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.validation.MethodValidated;
 import com.annotation.base.DoRequest;
 import com.annotation.base.DoResponse;
 import com.annotation.order.IOrderService;
@@ -17,9 +18,14 @@ public class DefaultOrderController {
 
     @Reference(application = "${dubbo.application.id}",  //应用
                 registry = "${dubbo.registry.id}",   //注册中心
-                version = "${dubbo.orderService.version}", //版本
-                timeout = 500)  //超时 等..
+                version = "${dubbo.orderService.version}", //版本 ${dubbo.orderService.version}
+                check = false,  //关闭服务的启动时检查 (没有提供者时报错)
+                stub = "true",
+                retries = 3, //重试次数
+                timeout = 4000//超时 等..
+    )
     IOrderService orderService;
+
 
     @RequestMapping("/order")
     public String remoteOrderService(){
