@@ -27,7 +27,7 @@
         </dependency>
         <!--dubbo 整合到spring-boot-->
         <dependency>
-            <groupId>com.alibaba.spring.boot</groupId>
+            <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
         <!--zkclient 客户端-->

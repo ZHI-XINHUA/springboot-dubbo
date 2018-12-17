@@ -1,0 +1,31 @@
+# Spring boot applicationspring:
+  application:
+    name: springboot-dubbo-consumer
+  server:
+    port: 8082
+
+# Dubbo Config properties
+## ApplicationConfig bean
+  dubbo:
+    application:
+      name: dubbo-consumer
+      id: dubbo-consumer
+      owner: zhx
+      logger: log4j
+
+    ## RegistryConfig bean
+    registry:
+      id: zkRegistry
+      address: zookeeper://192.168.3.31:2182
+    scan:
+      basePackages: com.springboot
+
+    #service version
+    orderService:
+      version: 2.0.0
+
+
+
+
+
+
